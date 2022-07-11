@@ -24,6 +24,7 @@ fun SettingsScreen(
     navController: NavController,
     modifier: Modifier = Modifier
 ) {
+    val id = "Paso el parametro"
     Column(
         modifier = modifier
             .fillMaxSize(),
@@ -36,9 +37,7 @@ fun SettingsScreen(
         )
         Spacer(modifier = Modifier.padding(50.dp))
         Button(
-            onClick = {
-                navController.navigate(Screen.About.route)
-            },
+            onClick = {navController.navigate(Screen.About.withArgs(id))},
             modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
             Text(text = stringResource(id = R.string.to_about_screen_button_text))
